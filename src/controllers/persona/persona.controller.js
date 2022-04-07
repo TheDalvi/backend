@@ -68,8 +68,8 @@ const remove = async(req, res) => {
 }
 const add = async(req, res) => {
     try {
-        let usuario = req.body.usuario;
-        let result = await service.create(usuario);
+        let persona = req.body.persona;
+        let result = await service.create(persona);
         res.status(200).send({
             success: true,
             result

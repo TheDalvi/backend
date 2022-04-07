@@ -1,7 +1,12 @@
 const sequelize = require("../../dataService");
 const { categoriaModel } = require("../models/categoria.model")
-const create = (categoria) => {
-    return categoriaModel.create(categoria);
+const create = async (categoria) => {
+    return await sequelize.query(`INSERT INTO 
+    "categoria" ("Descripcion") VALUES (:d)`, {
+        replacements: {
+            d:categoria.Descripcion
+        }
+    });
 }
 
 const getFilter = async(q, l = 10, p = 1) => {

@@ -8,10 +8,10 @@ var personaModel = sequelize.define("persona", {
         type: DataTypes.INTEGER,
         allowNull: true
     },
-    RolId: {
-        type: DataTypes.INTEGER,
-        allowNull: true
-    },
+    // RolId: {
+    //     type: DataTypes.INTEGER,
+    //     allowNull: true
+    // },
     Nombre: {
         type: DataTypes.STRING,
         allowNull: true
@@ -36,7 +36,7 @@ var personaModel = sequelize.define("persona", {
         type: DataTypes.STRING,
         allowNull: true
     },
-    Contrasena: {
+    Contrasenha: {
         type: DataTypes.STRING,
         allowNull: true
     },

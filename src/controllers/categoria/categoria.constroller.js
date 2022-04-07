@@ -87,6 +87,7 @@ const add = async(req, res) => {
         let usuario = req.body;
         console.log(req.body)
         let result = await service.create(usuario);
+        console.log(result)
         res.status(200).send({
             success: true,
             result
