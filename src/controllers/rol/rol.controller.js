@@ -20,7 +20,7 @@ const getFilter = async(req, res) => {
     }
 }
 
- function getall(req, res) {
+const getall = async(req, res) =>{
     try {
 
         let result = await service.getall();
