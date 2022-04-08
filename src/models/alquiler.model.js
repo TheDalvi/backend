@@ -15,7 +15,7 @@ var alquilerModel = sequelize.define("localalquiler", {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    LugarReferencia: {
+    Referencia: {
         type: DataTypes.STRING,
         allowNull: false,
     },
