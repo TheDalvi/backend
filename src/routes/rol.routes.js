@@ -5,4 +5,5 @@ module.exports = (app) => {
     app.put('/rol/update', controller.update);
     app.post('/rol/add', controller.add);
     app.delete('/rol/remove/:Id', controller.remove);
+    app.get('/rol/getall', controller.getall);
 }

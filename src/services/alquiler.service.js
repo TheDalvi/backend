@@ -53,4 +53,18 @@ const remove = async(Id) => {
     return (count > 0)
 }
 
-module.exports = { update, remove, getFilter, getById, create };
+const get = async() => {
+    console.log("Hoasadad")
+    let result =await sequelize.query(
+        `SELECT * FROM 
+        "localalquiler";
+        `, {
+            replacements: {
+           
+            }
+        });
+        console.log(result)
+    result = (result && result[0]) ? result[0] : [];
+    return result;
+}
+module.exports = { update, remove, getFilter, getById, create , get };

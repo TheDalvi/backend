@@ -1,5 +1,23 @@
 const service = require("../../services/alquiler.service")
 
+
+const getAll = async(req, res) => {
+    try {
+    
+        let result = await service.get()
+
+        res.status(200).send({
+            success: true,
+            result
+        });
+    } catch (error) {
+        res.status(400).send({
+            success: false,
+            result: error.message
+        });
+    }
+}
+
 const getFilter = async(req, res) => {
     try {
         let q = req.params.q;
@@ -89,5 +107,6 @@ module.exports = {
     getById,
     add,
     remove,
-    update
+    update,
+    getAll
 };

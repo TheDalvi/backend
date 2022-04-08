@@ -1,8 +1,14 @@
 const sequelize = require("../../dataService");
 const { rolModel } = require("../models/rol.model")
-const create = (rol) => {
-    return rolModel.create(rol);
+const create = async(rol) => {
+    return await sequelize.query (`INSERT INTO 
+    "rol" ("Descripcion") VALUES (:d)`, {
+        replacements: {
+            d:rol.Descripcion
+        }
+    });
 }
+
 
 const getFilter = async(q, l = 10, p = 1) => {
     let result = await sequelize.query(
@@ -52,5 +58,18 @@ const remove = async(Id) => {
     });
     return (count > 0)
 }
-
-module.exports = { update, remove, getFilter, getById, create };
+const getall = async() => {
+    console.log("Hoasadad")
+    let result =await sequelize.query(
+        `SELECT * FROM 
+        "rol";
+        `, {
+            replacements: {
+           
+            }
+        });
+        console.log(result)
+    result = (result && result[0]) ? result[0] : [];
+    return result;
+}
+module.exports = { update, remove, getFilter, getById, create, getall };

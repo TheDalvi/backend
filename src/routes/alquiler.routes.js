@@ -5,4 +5,6 @@ module.exports = (app) => {
     app.put('/alquiler/update', controller.update);
     app.post('/alquiler/add', controller.add);
     app.delete('/alquiler/remove/:Id', controller.remove);
+
+    app.get('/alquiler/getall', controller.getAll);
 }
